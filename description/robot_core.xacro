@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+    <xacro:include filename="$(find agv_lince)/description/robot.trans" />
+    <xacro:include filename="$(find agv_lince)/description/robot.gazebo" />
+
+    <!-- MATERIALS -->
+    <material name="silver">
+        <color rgba="0.700 0.700 0.700 1.000"/>
+    </material>
+
+
+    <!-- BASE LINK -->
+    <link name="base_link">
+
+    </link>
+
+    <!-- CHASSIS LINK -->
+    <joint name="chassi_joint" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="chassi"/>
+    </joint>
+
+    <link name="chassi">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0.005723690556912747 -1.2710837581631485e-16 0.1330365108864905"/>
+            <mass value="49.457223713872615"/>
+            <inertia ixx="0.894743" ixy="0.0" ixz="-0.06522" iyy="2.245921" iyz="-0.0" izz="2.9822"/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://agv_lince/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://agv_lince/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <!-- LIDAR LINK -->
+    <joint name="lidar_joint" type="fixed">
+        <origin rpy="0 0 0" xyz="0.3525 0.0 0.2655"/>
+        <parent link="chassi"/>
+        <child link="lidar"/>
+    </joint>
+
+    <link name="lidar">
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.000712584576985309 -4.130231120300454e-06 0.01895652806211956"/>
+            <mass value="0.17371795569954332"/>
+            <inertia ixx="8.1e-05" ixy="0.0" ixz="1e-06" iyy="7.9e-05" iyz="0.0" izz="0.000114"/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="-0.3525 -0.0 -0.2655"/>
+            <geometry>
+                <mesh filename="package://agv_lince/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="-0.3525 -0.0 -0.2655"/>
+            <geometry>
+                <mesh filename="package://agv_lince/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <!-- KINECT CAMERA LINK -->
+    <joint name="kinect_joint" type="fixed">
+        <origin rpy="0 0 0" xyz="0.3555 0.0 0.1795"/>
+        <parent link="chassi"/>
+        <child link="kinect"/>
+    </joint>
+
+    <link name="kinect">
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.002248529840528868 4.525712411141205e-05 0.04507302819784481"/>
+            <mass value="0.6981884785115198"/>
+            <inertia ixx="0.003322" ixy="-1e-06" ixz="4e-06" iyy="0.000442" iyz="-0.0" izz="0.003298"/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="-0.3555 -0.0 -0.1795"/>
+            <geometry>
+                <mesh filename="package://agv_lince/meshes/kinect_1.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="-0.3555 -0.0 -0.1795"/>
+            <geometry>
+                <mesh filename="package://agv_lince/meshes/kinect_1.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+        <!-- LEFT WHEEL LINK -->
+    <joint name="left_wheel_joint" type="continuous">
+        <origin rpy="0 0 0" xyz="-0.23 0.1965 0.084"/>
+        <parent link="chassi"/>
+        <child link="left_wheel"/>
+        <axis xyz="0.0 1.0 0.0"/>
+    </joint>
+
+    <link name="left_wheel">
+    <inertial>
+        <origin rpy="0 0 0" xyz="2.4702462297909733e-15 0.039917522857950805 0.0"/>
+        <mass value="1.2398446203839488"/>
+        <inertia ixx="0.002557" ixy="0.0" ixz="0.0" iyy="0.004364" iyz="0.0" izz="0.002557"/>
+    </inertial>
+    <visual>
+        <origin rpy="0 0 0" xyz="0.23 -0.1965 -0.084"/>
+        <geometry>
+        <mesh filename="package://agv_facens_description/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="silver"/>
+    </visual>
+    <collision>
+        <origin rpy="0 0 0" xyz="0.23 -0.1965 -0.084"/>
+        <geometry>
+        <mesh filename="package://agv_facens_description/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+    </collision>
+    </link>
+
+    <!-- RIGHT WHEEL LINK -->
+    <joint name="right_wheel_joint" type="continuous">
+        <origin rpy="0 0 0" xyz="-0.23 -0.1965 0.084"/>
+        <parent link="chassi"/>
+        <child link="right_wheel"/>
+        <axis xyz="-0.0 1.0 0.0"/>
+    </joint>
+
+    <link name="right_wheel">
+        <inertial>
+            <origin rpy="0 0 0" xyz="1.482147737874584e-14 -0.03991752285795086 1.3877787807814457e-17"/>
+            <mass value="1.2398446203839475"/>
+            <inertia ixx="0.002557" ixy="-0.0" ixz="0.0" iyy="0.004364" iyz="-0.0" izz="0.002557"/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0.23 0.1965 -0.084"/>
+            <geometry>
+                <mesh filename="package://agv_lince/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0.23 0.1965 -0.084"/>
+            <geometry>
+                <mesh filename="package://agv_lince/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+</robot>
