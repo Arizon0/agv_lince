@@ -31,14 +31,14 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0"/>
             <geometry>
-                <mesh filename="package://agv_lince/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="file://$(find agv_lince)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="silver"/>
         </visual>
         <collision>
             <origin rpy="0 0 0" xyz="0 0 0"/>
             <geometry>
-                <mesh filename="package://agv_lince/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="file://$(find agv_lince)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </collision>
     </link>
@@ -59,14 +59,14 @@
         <visual>
             <origin rpy="0 0 0" xyz="-0.3525 -0.0 -0.2655"/>
             <geometry>
-                <mesh filename="package://agv_lince/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="file://$(find agv_lince)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="silver"/>
         </visual>
         <collision>
             <origin rpy="0 0 0" xyz="-0.3525 -0.0 -0.2655"/>
             <geometry>
-                <mesh filename="package://agv_lince/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="file://$(find agv_lince)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </collision>
     </link>
@@ -87,14 +87,14 @@
         <visual>
             <origin rpy="0 0 0" xyz="-0.3555 -0.0 -0.1795"/>
             <geometry>
-                <mesh filename="package://agv_lince/meshes/kinect_1.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="file://$(find agv_lince)/meshes/kinect_1.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="silver"/>
         </visual>
         <collision>
             <origin rpy="0 0 0" xyz="-0.3555 -0.0 -0.1795"/>
             <geometry>
-                <mesh filename="package://agv_lince/meshes/kinect_1.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="file://$(find agv_lince)/meshes/kinect_1.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </collision>
     </link>
@@ -116,14 +116,14 @@
     <visual>
         <origin rpy="0 0 0" xyz="0.23 -0.1965 -0.084"/>
         <geometry>
-        <mesh filename="package://agv_facens_description/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file://$(find agv_lince)/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="silver"/>
     </visual>
     <collision>
         <origin rpy="0 0 0" xyz="0.23 -0.1965 -0.084"/>
         <geometry>
-        <mesh filename="package://agv_facens_description/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file://$(find agv_lince)/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
         </geometry>
     </collision>
     </link>
@@ -145,14 +145,14 @@
         <visual>
             <origin rpy="0 0 0" xyz="0.23 0.1965 -0.084"/>
             <geometry>
-                <mesh filename="package://agv_lince/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="file://$(find agv_lince)/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="silver"/>
         </visual>
         <collision>
             <origin rpy="0 0 0" xyz="0.23 0.1965 -0.084"/>
             <geometry>
-                <mesh filename="package://agv_lince/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="file://$(find agv_lince)/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </collision>
     </link>
