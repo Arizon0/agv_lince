@@ -6,40 +6,41 @@
     <gazebo>
         <plugin name="control" filename="libgazebo_ros_control.so"/>
     </gazebo>
-    <gazebo reference="base_link">
+    
+    <gazebo reference="chassi">
+        <material>${body_color}</material>
+        <!-- <mu1>0.001</mu1>
+        <mu2>0.001</mu2>
+        <self_collide>true</self_collide>
+        <gravity>true</gravity> -->
+    </gazebo>
+
+    <gazebo reference="right_wheel">
+        <material>${body_color}</material>
+        <!-- <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <self_collide>true</self_collide> -->
+    </gazebo>
+
+    <gazebo reference="left_wheel">
+        <material>${body_color}</material>
+        <!-- <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <self_collide>true</self_collide> -->
+    </gazebo>
+
+    <gazebo reference="left_caster">
         <material>${body_color}</material>
         <mu1>0.001</mu1>
         <mu2>0.001</mu2>
-        <self_collide>true</self_collide>
-        <gravity>true</gravity>
+        <!-- <self_collide>true</self_collide> -->
     </gazebo>
 
-    <gazebo reference="right_wheel_1">
+    <gazebo reference="right_caster">
         <material>${body_color}</material>
-        <!-- <mu1>0.2</mu1>
-        <mu2>0.2</mu2>
-        <self_collide>true</self_collide> -->
-    </gazebo>
-
-    <gazebo reference="left_wheel_1">
-        <material>${body_color}</material>
-        <!-- <mu1>0.2</mu1>
-        <mu2>0.2</mu2>
-        <self_collide>true</self_collide> -->
-    </gazebo>
-
-    <gazebo reference="lidar_1">
-        <material>${body_color}</material>
-        <!-- <mu1>0.2</mu1>
-        <mu2>0.2</mu2>
-        <self_collide>true</self_collide> -->
-    </gazebo>
-
-    <gazebo reference="kinect_1">
-        <material>${body_color}</material>
-        <!-- <mu1>0.2</mu1>
-        <mu2>0.2</mu2>
-        <self_collide>true</self_collide> -->
+        <mu1>0.001</mu1>
+        <mu2>0.001</mu2>
+        <!-- <self_collide>true</self_collide> -->
     </gazebo>
 
 </robot>
