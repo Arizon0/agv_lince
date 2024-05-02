@@ -158,7 +158,7 @@
     </link>
 
     <!-- Camera -->
-    <joint name="R gido 12" type="fixed">
+    <!-- <joint name="R gido 12" type="fixed">
         <origin xyz="0.65505 0.2095 0.2277" rpy="0 0 0"/>
         <parent link="chassi"/>
         <child link="camera_1"/>
@@ -183,7 +183,7 @@
                 <mesh filename="file:/;$(find agv_lince)/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </collision>
-    </link>
+    </link> -->
 
 
 </robot>
