@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-      <ros2_control name="RealRobot" type="system">
+    <!-- # PARA ALTERAR EM RODAR O PROJETO NO GAZEBO OU NO ROBO REAL, ALTERNE ENTRE AS PRÉ PROGRAMAÇÕES ABAIXO # -->
+
+      <!-- <ros2_control name="RealRobot" type="system">
             <hardware>
                 <plugin>diffdrive_arduino/DiffDriveArduino</plugin>
                 <param name="left_wheel_name">left_wheel_joint</param>
@@ -28,9 +30,9 @@
                 <state_interface name="velocity"/>
                 <state_interface name="position"/>
             </joint>
-        </ros2_control>
+        </ros2_control> -->
         
-    <!-- <ros2_control name="GazeboSystem" type="system">
+    <ros2_control name="GazeboSystem" type="system">
         <hardware>
             <plugin>gazebo_ros2_control/GazeboSystem</plugin>
         </hardware>
@@ -50,7 +52,7 @@
             <state_interface name="velocity"/>
             <state_interface name="position"/>
         </joint>
-    </ros2_control> -->
+    </ros2_control>
 
     <gazebo>
         <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
