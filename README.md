@@ -3,9 +3,9 @@
 
 Hardware + Recommended Versions:
 
-	•	Raspberry Pi 3 B+ (NOT RECOMMENDED)
-	•	Raspberry Pi 4 and later (RECOMMENDED)
-	•	Jetson NANO and later (RECOMMENDED)
+* Raspberry Pi 3 B+ (NOT RECOMMENDED)
+* Raspberry Pi 4 and later (RECOMMENDED)
+* Jetson NANO and later (RECOMMENDED)
 
 All boards need to have at least 4GB of RAM. Boards with less may face limitations!
 
@@ -35,14 +35,15 @@ https://docs.nvidia.com/sdk-manager/install-with-sdkm-jetson/index.html
 If CUDA is still not installed successfully, I recommend reformatting and installing the SDK on the Jetson without any additional components.
 Then, after it starts, install manually with the command:
 
+```Linux	
 $ sudo apt update
 $ sudo apt upgrade
 $ sudo apt install nvidia-jetpack
-
+```
 After the installation is complete, check the installed version:
-
+```Linux
 $ sudo apt show nvidia-jetpack
-
+```
 ROS2 - FOXY Installation:
 
 FOLLOW THE STEP-BY-STEP GUIDE ON THIS ROS SITE:
@@ -56,14 +57,14 @@ NOTE: It is not necessary to use SUDO commands inside any folder!
 Extra Components Installation:
 
 It is mandatory to run all these commands after installing the Jetson SDK above!
-
+```Linux
 $ sudo apt update
 $ sudo apt upgrade
 $ sudo apt install git
 $ sudo apt install ros-foxy-xacro
 $ sudo apt install python3-colcon-common-extensions
 $ sudo apt install ros-foxy-ros2-control ros-foxy-ros2-controllers ros-foxy-gazebo-ros2-control
-
+```
 These commands should be run both on the DESKTOP and on the AGV!
 
 Packages Installation:
@@ -76,15 +77,15 @@ Robot - Robot name (agv_ws) It must contain _ws
 
 After creating the folder for the robot and desktop name_ws, it is necessary to create another folder inside it named (src) on both machines.
 Inside the src folders (/Desktop/agv_ws/src), run the following commands:
-
+```Linux
 $ git clone Packages
 $ git clone Packages
 $ git clone Packages
-
+```
 And on the DESKTOP (PC RESPONSIBLE FOR THE STEERING WHEEL):
-
+```Linux
 $ git clone Packages
-
+```
 
 
 # Versão em Português (Brasil)
@@ -123,15 +124,15 @@ https://docs.nvidia.com/sdk-manager/install-with-sdkm-jetson/index.html
 
 Caso, mesmo assim, não seja instalado com sucesso o CUDA, recomendo formatar novamente e instalar o SDK na Jetson sem nenhum componente a mais!
 Instale manualmente após ela iniciar, com o comando:
-
+```Linux
 $ sudo apt update
 $ sudo apt upgrade
 $ sudo apt install nvidia-jetpack
-
+```
 Após terminar a instalação, verifique a versão instalada:
-
+```Linux
 $ sudo apt show nvidia-jetpack
-
+```
 Instalação do ROS2 - FOXY
 
 SIGA O PASSO A PASSO NESTE SITE DO ROS:
@@ -146,13 +147,14 @@ Instalação de Componentes Extras:
 
 É obrigatório executar toda esta lista de comandos após efetuar a instalação do SDK Jetson acima!
 
+```Linux
 $ sudo apt update
 $ sudo apt upgrade
 $ sudo apt install git
 $ sudo apt install ros-foxy-xacro
 $ sudo apt install python3-colcon-common-extensions
 $ sudo apt install ros-foxy-ros2-control ros-foxy-ros2-controllers ros-foxy-gazebo-ros2-control
-
+```
 Estes comandos devem ser dados tanto no DESKTOP quanto no AGV!
 
 Instalação dos Pacotes:
@@ -165,10 +167,12 @@ Robô - Nome do Robô (agv_ws) Obrigatório possuir _ws
 
 Após criar a pasta do robô e desktop name_ws, é necessário criar dentro dela outra pasta chamada (src). Isso deve ser feito em ambas as máquinas.
 Dentro das pastas src (/Desktop/agv_ws/src), você precisará dar os seguintes comandos:
-
+```Linux
 $ git clone Pacotes
 $ git clone Pacotes
 $ git clone Pacotes
-
+```
 E no DESKTOP (PC RESPONSÁVEL PELO VOLANTE):
+```Linux
 $ git clone Pacotes
+```
