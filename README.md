@@ -87,8 +87,8 @@ $ git clone Packages
 
 
 
-
-Versão em Português (Brasil): Projeto AGV-CAR (Lince - Facens 2024)
+# Versão em Português (Brasil)
+# Projeto AGV-CAR (Lince - Facens 2024)
 
 Hardware + Versões recomendadas:
 
